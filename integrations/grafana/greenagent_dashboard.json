@@ -1,0 +1,50 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "Total Avoided Carbon (g CO2e)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "targets": [{ "expr": "greenagent_carbon_grams_total", "legendFormat": "Carbon Emitted" }]
+    },
+    {
+      "title": "Energy Consumed (Joules)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "targets": [{ "expr": "greenagent_energy_joules_total", "legendFormat": "Joules" }]
+    },
+    {
+      "title": "Semantic Cache Hit Count",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "targets": [{ "expr": "greenagent_cache_hits_total", "legendFormat": "Hits" }]
+    },
+    {
+      "title": "Energy Saved by Optimization (Joules)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "targets": [{ "expr": "greenagent_energy_saved_joules_total", "legendFormat": "Saved Joules" }]
+    },
+    {
+      "title": "Real-Time AI Energy Rate (Watts)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "targets": [{ "expr": "rate(greenagent_energy_joules_total[1m])", "legendFormat": "Power Draw (W)" }]
+    },
+    {
+      "title": "Emissions Rate (g CO2e / min)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "targets": [{ "expr": "rate(greenagent_carbon_grams_total[1m]) * 60", "legendFormat": "g CO2e / min" }]
+    }
+  ],
+  "schemaVersion": 38,
+  "title": "GreenAgent OS — Infrastructure Carbon & Energy",
+  "version": 1
+}
