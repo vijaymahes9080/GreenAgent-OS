@@ -15,6 +15,10 @@
 
 </div>
 
+<p align="center">
+  <img src="docs/images/linkedin_banner.png" alt="GreenAgent OS Hero Banner" width="900" style="border-radius: 10px;" />
+</p>
+
 ---
 
 ## 🌍 Mission & The Transparency Mandate
@@ -52,6 +56,24 @@ GreenAgent OS **never makes unsupported claims about carbon emissions**. Every m
 
 ---
 
+## 🏗️ Architecture & Optimization Pipeline
+
+<p align="center">
+  <img src="docs/images/architecture_light.png" alt="GreenAgent OS Pipeline Architecture" width="900" style="border-radius: 10px;" />
+</p>
+
+The platform routes and executes AI workloads through an 8-stage optimization lifecycle:
+1. **Workload Ingestion**: Intercepts prompts via Python SDK, LangChain/CrewAI callbacks, or REST API.
+2. **Semantic Cache & Deduplication**: Vector cosine & hash lookup with pgvector to avoid identical forward passes.
+3. **Complexity Classification**: Classifies tasks (`EASY`, `MEDIUM`, `HARD`, `CRITICAL`) using heuristic & token features.
+4. **Spatio-Temporal Carbon Scheduling**: Dynamically selects low-carbon regional grid hours and BESS battery reserves.
+5. **Multi-Objective Solver**: Solves constrained Pareto trade-offs across energy, carbon, cost, latency, and quality.
+6. **Model Execution**: Routes tasks to right-sized local models (Ollama) or frontier models with prompt compression.
+7. **Hardware Energy Probes**: Measures physical Joules via Intel/AMD RAPL MSRs and NVIDIA NVML counters.
+8. **Quality Guard & Auto-Rollback**: Enforces schema adherence and triggers automatic higher-tier model retries.
+
+---
+
 ## 📐 Multi-Objective Optimization
 
 The optimizer scalarizes competing objectives into a unified constrained minimization problem:
@@ -82,6 +104,20 @@ Empirically validated on 100 concrete workloads (30 Easy, 30 Medium, 25 Hard, 15
 | **Safety Invariants** | $0$ Delays on Critical | $0 \, \text{delays}$ | $0 \, \text{delays}$ | **100% Guaranteed** | **PASSED** |
 
 *Raw results stored in `benchmarks/benchmark_results.json`.*
+
+---
+
+## 🖥️ Live Telemetry Dashboard (Light Theme)
+
+<p align="center">
+  <img src="docs/images/dashboard_light.png" alt="GreenAgent OS Light Dashboard Interface" width="900" style="border-radius: 10px;" />
+</p>
+
+The enterprise dashboard provides full-stack visibility across your agent infrastructure:
+- **Carbon & Cost Telemetry**: Live tracker for avoided $\text{gCO}_2\text{e}$, cost savings, and Joules consumed.
+- **24-Hour Diurnal Grid Intensity**: Identifies peak solar and wind generation windows for automated batch shifting.
+- **Complexity & Model Distribution**: Real-time breakdown of tasks categorized into Easy, Medium, Hard, and Critical tiers.
+- **Auditable Execution Logs**: Transparent attribution tags (`MEASURED_ENERGY`, `ESTIMATED_CARBON`, `EXTERNALLY_SUPPLIED`).
 
 ---
 
