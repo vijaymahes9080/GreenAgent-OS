@@ -16,6 +16,7 @@ from backend.app.api.scheduler import router as scheduler_router
 from backend.app.api.cache import router as cache_router
 from backend.app.api.integrations import router as integrations_router
 from backend.app.api.benchmarks import router as benchmarks_router
+from backend.app.api.metrics import router as metrics_router
 
 # Initialize SQLite database
 init_db()
@@ -66,6 +67,7 @@ app.include_router(scheduler_router, prefix=settings.API_PREFIX)
 app.include_router(cache_router, prefix=settings.API_PREFIX)
 app.include_router(integrations_router, prefix=settings.API_PREFIX)
 app.include_router(benchmarks_router, prefix=settings.API_PREFIX)
+app.include_router(metrics_router)
 
 
 @app.get("/health", tags=["system"])
