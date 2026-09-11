@@ -5,13 +5,14 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
 [![Node.js: 18+](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-teal.svg)](https://vijaymahes9080.github.io/GreenAgent-OS/)
 [![Tests: 47 Passed](https://img.shields.io/badge/Tests-47%20Passed-emerald.svg)](tests/)
 [![Carbon Reduction: 99.37%](https://img.shields.io/badge/Carbon%20Reduction-99.37%25-teal.svg)](benchmarks/)
 [![Zero GPU Mandate](https://img.shields.io/badge/Hardware-Zero%20GPU%20Required-blueviolet.svg)](#)
 
 **An open-source AI-agent execution optimization platform that measures and reduces the estimated energy, carbon footprint, financial cost, and redundant computation of AI workflows while preserving quality, latency, and deadlines.**
 
-[Quick Start](#-quick-start) • [Architecture](#-architecture) • [Mathematical Model](#-multi-objective-optimization) • [Benchmarks](#-empirical-benchmarks) • [Python SDK](#-python-sdk) • [Documentation](#-documentation)
+[Live Demo](https://vijaymahes9080.github.io/GreenAgent-OS/) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Mathematical Model](#-multi-objective-optimization) • [Benchmarks](#-empirical-benchmarks) • [Python SDK](#-python-sdk) • [Documentation](#-documentation)
 
 </div>
 
