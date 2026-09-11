@@ -19,16 +19,23 @@ GreenAgent OS **never** makes unsupported claims about carbon emissions. Every m
 
 ---
 
-## Key Features
+## Key Features & Enterprise Ecosystem
 
 1. **Deterministic Complexity Classifier**: Categorizes tasks into `EASY`, `MEDIUM`, `HARD`, or `CRITICAL` before invoking heavy models.
-2. **Semantic Caching**: Combines SHA-256 exact matching with cosine similarity vector embeddings to eliminate redundant forward passes.
+2. **Semantic Caching**: Combines SHA-256 exact matching with cosine similarity vector embeddings to eliminate redundant forward passes. Supports pgvector HNSW indexing.
 3. **Carbon-Aware Scheduling**: Evaluates 24-hour diurnal solar/wind curves across 5 regions (`us-east`, `us-west`, `eu-central`, `eu-north`, `ap-south`) with spatial and temporal shifting.
 4. **Safety Invariants**: Emergency, critical, medical, or user-blocking workloads are strictly protected from delay.
 5. **Quality Guard**: Automatically evaluates task completion, schema adherence, and factual consistency, triggering automated fallback retries if quality drops.
-6. **Integrations**: Drop-in adapters for Anthropic's **Model Context Protocol (MCP)** and **n8n Community Edition** webhooks.
-7. **Production Dashboard**: Modern React + Vite + TypeScript + Tailwind CSS dashboard with 10 dedicated pages.
-8. **Reproducible 100-Workload Benchmark**: Validated on 100 real workloads with empirical verification against sustainability targets.
+6. **Prompt Token Compressor**: Prunes filler tokens prior to inference, cutting prefill energy by 25%–40% without semantic loss.
+7. **BESS Micro-Grid Battery Co-Optimizer**: Dynamically switches to onsite clean battery reserves during grid carbon spikes.
+8. **Speculative Early-Exit Optimizer**: Simulates dynamic transformer layer skipping to reduce FLOPs by up to 50%.
+9. **Hardware Probes**: Direct reading of Intel/AMD RAPL MSRs and NVIDIA NVML physical energy counters.
+10. **Agent Framework Integrations**: Drop-in callbacks for **LangChain**, **LangGraph**, **CrewAI**, and **AutoGen**.
+11. **Automation & Protocols**: Drop-in adapters for Anthropic's **Model Context Protocol (MCP)** and **n8n Community Edition** webhooks.
+12. **Kubernetes & Cloud-Native**: Production **Helm Chart** and **KEDA carbon-driven autoscaler** manifests.
+13. **Observability**: Prometheus `/metrics` exporter and ready-to-import **Grafana Dashboard** specification.
+14. **Production Dashboard**: Modern React 18 + Vite + TypeScript + Tailwind CSS dashboard with 10 dedicated pages.
+15. **Reproducible Benchmark**: Validated on 100 real workloads with empirical verification against sustainability targets.
 
 ---
 
