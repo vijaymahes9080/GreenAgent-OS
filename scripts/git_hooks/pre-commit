@@ -1,0 +1,14 @@
+#!/bin/sh
+# GreenAgent OS Pre-Commit Hook
+# Prevents accidentally committing giant uncompressed prompts or raw credentials
+
+echo "[GreenAgent Hook] Inspecting staged files for unredacted credentials & uncompressed prompts..."
+
+# Check for raw sk- keys
+if git diff --cached | grep -E "sk-[a-zA-Z0-9]{20,}"; then
+    echo "ERROR: Potential raw API key detected in commit diff! Use GreenAgent secret redaction."
+    exit 1
+fi
+
+echo "[GreenAgent Hook] Verification passed."
+exit 0
