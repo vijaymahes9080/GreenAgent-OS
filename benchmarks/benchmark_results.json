@@ -1,0 +1,2246 @@
+{
+  "id": "98b6e11c-d13a-4041-a5fd-2a0fb656786c",
+  "timestamp": "2026-09-11T14:06:33.016374+00:00",
+  "version": "1.0.0",
+  "source": "greenagent-core",
+  "benchmark_name": "GreenAgent-OS-Standard-100",
+  "total_workloads": 100,
+  "baseline_metrics": {
+    "total_energy_joules": 19534.76,
+    "total_carbon_g_co2e": 2.1912,
+    "total_cost_usd": 0.0744,
+    "avg_latency_ms": 1450.0,
+    "avg_quality_score": 0.94,
+    "total_model_calls": 100.0,
+    "deadline_violations": 0.0
+  },
+  "optimized_metrics": {
+    "total_energy_joules": 1161.31,
+    "total_carbon_g_co2e": 0.0139,
+    "total_cost_usd": 0.0044,
+    "avg_latency_ms": 135.3,
+    "avg_quality_score": 0.9415,
+    "total_model_calls": 17.0,
+    "cache_hits": 83.0,
+    "deadline_violations": 0.0
+  },
+  "percentage_changes": {
+    "carbon_reduction_pct": 99.37,
+    "cost_reduction_pct": 94.04,
+    "energy_reduction_pct": 94.06,
+    "latency_reduction_pct": 90.67,
+    "model_call_reduction_pct": 83.0,
+    "quality_degradation_pct": 0.0,
+    "deadline_violation_rate_pct": 0.0
+  },
+  "targets_achieved": {
+    "carbon_reduction_ge_15pct": true,
+    "cost_reduction_ge_10pct": true,
+    "unnecessary_calls_ge_20pct": true,
+    "deadline_violations_lt_5pct": true,
+    "quality_degradation_lt_3pct": true
+  },
+  "verdict": "PASSED_ALL_TARGETS",
+  "details": [
+    {
+      "workload_id": "easy-01",
+      "name": "Sentiment Analysis",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-02",
+      "name": "Email Subject Line",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-03",
+      "name": "Grammar Correction",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-04",
+      "name": "Synonym Lookup",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-05",
+      "name": "Summarize Paragraph",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 198.17,
+        "carbon_g": 0.02223,
+        "cost_usd": 0.000826,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-06",
+      "name": "Spanish Translation",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.09,
+        "carbon_g": 0.02177,
+        "cost_usd": 0.000707,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-07",
+      "name": "Word Count",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-08",
+      "name": "Capital City",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.13,
+        "carbon_g": 0.02166,
+        "cost_usd": 0.000679,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-09",
+      "name": "Extract Names",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.81,
+        "carbon_g": 0.02185,
+        "cost_usd": 0.000728,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-10",
+      "name": "Format Phone Number",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.09,
+        "carbon_g": 0.02177,
+        "cost_usd": 0.000707,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-11",
+      "name": "Boolean FAQ Answer",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-12",
+      "name": "Boolean FAQ Answer Repeat",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-13",
+      "name": "Language Identification",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.37,
+        "carbon_g": 0.02169,
+        "cost_usd": 0.000686,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-14",
+      "name": "Language Identification Repeat",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.37,
+        "carbon_g": 0.02169,
+        "cost_usd": 0.000686,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-15",
+      "name": "Title Capitalization",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-16",
+      "name": "Title Capitalization Repeat",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-17",
+      "name": "Product Categorization",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.81,
+        "carbon_g": 0.02185,
+        "cost_usd": 0.000728,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-18",
+      "name": "Product Categorization Repeat",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.81,
+        "carbon_g": 0.02185,
+        "cost_usd": 0.000728,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-19",
+      "name": "Repeated Query A (Cache Candidate)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.85,
+        "carbon_g": 0.02174,
+        "cost_usd": 0.0007,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-20",
+      "name": "Repeated Query A (Cache Hit Test)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.85,
+        "carbon_g": 0.02174,
+        "cost_usd": 0.0007,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-21",
+      "name": "Repeated Query B (Cache Candidate)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.13,
+        "carbon_g": 0.02166,
+        "cost_usd": 0.000679,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-22",
+      "name": "Repeated Query B (Cache Hit Test)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.13,
+        "carbon_g": 0.02166,
+        "cost_usd": 0.000679,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-23",
+      "name": "Simple Greeting",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.09,
+        "carbon_g": 0.02177,
+        "cost_usd": 0.000707,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-24",
+      "name": "Simple Greeting Repeat",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.09,
+        "carbon_g": 0.02177,
+        "cost_usd": 0.000707,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-25",
+      "name": "Extract Email",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.33,
+        "carbon_g": 0.0218,
+        "cost_usd": 0.000714,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 58.15,
+        "carbon_g": 0.00062,
+        "cost_usd": 0.000204,
+        "latency_ms": 640.0
+      }
+    },
+    {
+      "workload_id": "easy-26",
+      "name": "Extract Email Repeat",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.33,
+        "carbon_g": 0.0218,
+        "cost_usd": 0.000714,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 58.15,
+        "carbon_g": 0.00062,
+        "cost_usd": 0.000204,
+        "latency_ms": 640.0
+      }
+    },
+    {
+      "workload_id": "easy-27",
+      "name": "Repeated Query C (Cache Candidate)",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.13,
+        "carbon_g": 0.02166,
+        "cost_usd": 0.000679,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-28",
+      "name": "Repeated Query C (Cache Hit Test)",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.13,
+        "carbon_g": 0.02166,
+        "cost_usd": 0.000679,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-29",
+      "name": "Currency Code",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.85,
+        "carbon_g": 0.02174,
+        "cost_usd": 0.0007,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "easy-30",
+      "name": "Currency Code Repeat",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 193.85,
+        "carbon_g": 0.02174,
+        "cost_usd": 0.0007,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-01",
+      "name": "SQL Query Generation",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.49,
+        "carbon_g": 0.02204,
+        "cost_usd": 0.000777,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-02",
+      "name": "Python Dataframe Filter",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.77,
+        "carbon_g": 0.02196,
+        "cost_usd": 0.000756,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-03",
+      "name": "JSON Schema Generation",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.05,
+        "carbon_g": 0.02188,
+        "cost_usd": 0.000735,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-04",
+      "name": "API Route Handler",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-05",
+      "name": "Regex Email & URL Parser",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.01,
+        "carbon_g": 0.02199,
+        "cost_usd": 0.000763,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-06",
+      "name": "Extract Key Takeaways",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.05,
+        "carbon_g": 0.02188,
+        "cost_usd": 0.000735,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-07",
+      "name": "Unit Test Drafting",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.81,
+        "carbon_g": 0.02185,
+        "cost_usd": 0.000728,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-08",
+      "name": "Git Workflow Explainer",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-09",
+      "name": "Docker Compose Service",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.57,
+        "carbon_g": 0.02182,
+        "cost_usd": 0.000721,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-10",
+      "name": "Bash Backup Script",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.49,
+        "carbon_g": 0.02204,
+        "cost_usd": 0.000777,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-11",
+      "name": "SQL Index Recommendation",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-12",
+      "name": "JSON Config Validator",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-13",
+      "name": "Repeated Med Query D (Cache Candidate)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-14",
+      "name": "Repeated Med Query D (Cache Hit Test)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-15",
+      "name": "Markdown Table Generator",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-16",
+      "name": "CSS Flexbox Layout",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-17",
+      "name": "Error Boundary in React",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 194.81,
+        "carbon_g": 0.02185,
+        "cost_usd": 0.000728,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-18",
+      "name": "Rate Limiter Logic",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.77,
+        "carbon_g": 0.02196,
+        "cost_usd": 0.000756,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-19",
+      "name": "Kubernetes Pod Resource Limits",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-20",
+      "name": "JWT Auth Flow Summary",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-21",
+      "name": "Data Sanitization Routine",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.77,
+        "carbon_g": 0.02196,
+        "cost_usd": 0.000756,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-22",
+      "name": "Crontab Expression",
+      "priority": "LOW",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-23",
+      "name": "Postgres Migration Step",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-24",
+      "name": "HTTP Retry Strategy",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.77,
+        "carbon_g": 0.02196,
+        "cost_usd": 0.000756,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-25",
+      "name": "Calculate P95 Latency",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-26",
+      "name": "Repeated Med Query E (Cache Candidate)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-27",
+      "name": "Repeated Med Query E (Cache Hit Test)",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-28",
+      "name": "Hash Ring Mechanism",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.05,
+        "carbon_g": 0.02188,
+        "cost_usd": 0.000735,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-29",
+      "name": "Async Task Queue Architecture",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "med-30",
+      "name": "Semantic Cosine Distance",
+      "priority": "NORMAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-01",
+      "name": "Mathematical Proof",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-02",
+      "name": "Distributed Consensus Analysis",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-03",
+      "name": "Multi-Objective Pareto Optimization",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-04",
+      "name": "Lock-Free Ring Buffer",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-05",
+      "name": "Compiler Register Allocation",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.01,
+        "carbon_g": 0.02199,
+        "cost_usd": 0.000763,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-06",
+      "name": "KV Cache Compression Algorithm",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-07",
+      "name": "Quantum Gate Simulation",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.73,
+        "carbon_g": 0.02207,
+        "cost_usd": 0.000784,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-08",
+      "name": "Micro-Architectural Side Channel",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-09",
+      "name": "Dynamic Programming Pipeline",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-10",
+      "name": "Non-Linear Diurnal Carbon Modeling",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-11",
+      "name": "Byzantine Agreement Protocol",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-12",
+      "name": "GPU Tensor Core Architecture",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-13",
+      "name": "AST Refactoring Engine",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 197.21,
+        "carbon_g": 0.02212,
+        "cost_usd": 0.000798,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-14",
+      "name": "Zero-Knowledge SNARK Derivation",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-15",
+      "name": "Self-Attention Computational Complexity",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.01,
+        "carbon_g": 0.02199,
+        "cost_usd": 0.000763,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-16",
+      "name": "Cache Poisoning Defense Proof",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.05,
+        "carbon_g": 0.02188,
+        "cost_usd": 0.000735,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-17",
+      "name": "Branch Prediction Optimization",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-18",
+      "name": "Simulated Annealing Scheduler",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.49,
+        "carbon_g": 0.02204,
+        "cost_usd": 0.000777,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-19",
+      "name": "Graph Neural Network Layer",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-20",
+      "name": "Database WAL Recovery Engine",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-21",
+      "name": "Distributed Tracing Protocol",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-22",
+      "name": "Asynchronous Event Loop in Rust",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.53,
+        "carbon_g": 0.02193,
+        "cost_usd": 0.000749,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-23",
+      "name": "Linear Programming Simplex Pivot",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 198.41,
+        "carbon_g": 0.02226,
+        "cost_usd": 0.000833,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-24",
+      "name": "Memory Bandwidth Bound vs Compute Bound",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.49,
+        "carbon_g": 0.02204,
+        "cost_usd": 0.000777,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "hard-25",
+      "name": "P-vs-NP Reduction Construction",
+      "priority": "HIGH",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.77,
+        "carbon_g": 0.02196,
+        "cost_usd": 0.000756,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "llama3.1:8b",
+        "action": "USE_CACHE",
+        "region": "us-east",
+        "cache_hit": true,
+        "energy_j": 0.2,
+        "carbon_g": 2e-05,
+        "cost_usd": 0.0,
+        "latency_ms": 12.0
+      }
+    },
+    {
+      "workload_id": "crit-01",
+      "name": "Emergency Cardiac Triage",
+      "priority": "EMERGENCY",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 197.93,
+        "carbon_g": 0.0222,
+        "cost_usd": 0.000819,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 69.11,
+        "carbon_g": 0.00074,
+        "cost_usd": 0.000281,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-02",
+      "name": "Nuclear Plant Coolant Leak",
+      "priority": "EMERGENCY",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 197.21,
+        "carbon_g": 0.02212,
+        "cost_usd": 0.000798,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.8,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000274,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-03",
+      "name": "Production Database Down",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.73,
+        "carbon_g": 0.02207,
+        "cost_usd": 0.000784,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.59,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000269,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-04",
+      "name": "Active Ransomware Containment",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.01,
+        "carbon_g": 0.02199,
+        "cost_usd": 0.000763,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.28,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000262,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-05",
+      "name": "Pediatric Drug Dosage Verification",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.25,
+        "carbon_g": 0.02201,
+        "cost_usd": 0.00077,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.38,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000264,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-06",
+      "name": "Autonomous Vehicle Braking Failure",
+      "priority": "EMERGENCY",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 197.21,
+        "carbon_g": 0.02212,
+        "cost_usd": 0.000798,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.8,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000274,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-07",
+      "name": "Aviation Cabin Depressurization",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.29,
+        "carbon_g": 0.02191,
+        "cost_usd": 0.000742,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 67.96,
+        "carbon_g": 0.00072,
+        "cost_usd": 0.000254,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-08",
+      "name": "Chemical Pipeline Overpressure",
+      "priority": "EMERGENCY",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 195.77,
+        "carbon_g": 0.02196,
+        "cost_usd": 0.000756,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.17,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000259,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-09",
+      "name": "Zero-Day Exploit Patching",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.25,
+        "carbon_g": 0.02201,
+        "cost_usd": 0.00077,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.38,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000264,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-10",
+      "name": "Sepsis Shock Resuscitation",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 197.21,
+        "carbon_g": 0.02212,
+        "cost_usd": 0.000798,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.8,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000274,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-11",
+      "name": "Electrical Grid Frequency Drop",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.97,
+        "carbon_g": 0.02209,
+        "cost_usd": 0.000791,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.69,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000271,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-12",
+      "name": "Legal Contempt Compliance",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.49,
+        "carbon_g": 0.02204,
+        "cost_usd": 0.000777,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.48,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000266,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-13",
+      "name": "Submarine Ballast Control Fault",
+      "priority": "EMERGENCY",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.73,
+        "carbon_g": 0.02207,
+        "cost_usd": 0.000784,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.59,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000269,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-14",
+      "name": "Anaphylaxis Epinephrine Calculation",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 196.25,
+        "carbon_g": 0.02201,
+        "cost_usd": 0.00077,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 68.38,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000264,
+        "latency_ms": 750.0
+      }
+    },
+    {
+      "workload_id": "crit-15",
+      "name": "Financial Trading Kill Switch",
+      "priority": "CRITICAL",
+      "baseline": {
+        "model": "mixtral:8x7b",
+        "energy_j": 197.69,
+        "carbon_g": 0.02217,
+        "cost_usd": 0.000812,
+        "latency_ms": 1450.0
+      },
+      "optimized": {
+        "model": "deepseek-r1:8b",
+        "action": "MOVE_REGION",
+        "region": "eu-north",
+        "cache_hit": false,
+        "energy_j": 69.0,
+        "carbon_g": 0.00073,
+        "cost_usd": 0.000278,
+        "latency_ms": 750.0
+      }
+    }
+  ]
+}

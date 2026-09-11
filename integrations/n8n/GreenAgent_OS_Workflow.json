@@ -1,0 +1,156 @@
+{
+  "name": "GreenAgent OS - Carbon-Optimized AI Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "trigger-ai-task",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "node-webhook-trigger",
+      "name": "Incoming Task Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:8000/api/v1/integrations/n8n/workload",
+        "method": "POST",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "ga-dev-test-key-2026"
+            },
+            {
+              "name": "X-Idempotency-Key",
+              "value": "={{$json[\"task_id\"] || $now.toString()}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{$json[\"name\"] || 'n8n-agent-task'}}"
+            },
+            {
+              "name": "prompt",
+              "value": "={{$json[\"prompt\"]}}"
+            },
+            {
+              "name": "priority",
+              "value": "={{$json[\"priority\"] || 'NORMAL'}}"
+            },
+            {
+              "name": "deadline_seconds",
+              "value": "={{$json[\"deadline_seconds\"] || 60}}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000,
+          "retryOnFail": true,
+          "maxTries": 3,
+          "waitBetweenTries": 2000
+        }
+      },
+      "id": "node-greenagent-optimize",
+      "name": "GreenAgent Optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [360, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json[\"data\"][\"status\"]}}",
+              "value2": "SUCCESS"
+            }
+          ]
+        }
+      },
+      "id": "node-decision-filter",
+      "name": "Check Execution Status",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [620, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "chatId": "ops-notifications",
+        "text": "=✅ Task Completed via GreenAgent OS:\nWorkload: {{$json[\"data\"][\"workload_id\"]}}\nModel: {{$json[\"data\"][\"execution_trace\"][\"model\"]}}\nLatency: {{$json[\"data\"][\"execution_trace\"][\"latency_ms\"]}}ms\nEnergy: {{$json[\"data\"][\"execution_trace\"][\"energy_joules\"]}}J\nCarbon: {{$json[\"data\"][\"execution_trace\"][\"carbon_co2e_grams\"]}}g CO2e"
+      },
+      "id": "node-success-notify",
+      "name": "Log Success Telemetry",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [880, 200]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "chatId": "ops-alerts",
+        "text": "=⚠️ GreenAgent Execution Fallback:\nError: {{$json[\"error\"] || 'Optimization timeout'}}\nRetrying via high-capability safety model..."
+      },
+      "id": "node-failure-branch",
+      "name": "Failure Fallback Branch",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [880, 440]
+    }
+  ],
+  "connections": {
+    "Incoming Task Webhook": {
+      "main": [
+        [
+          {
+            "node": "GreenAgent Optimizer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GreenAgent Optimizer": {
+      "main": [
+        [
+          {
+            "node": "Check Execution Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Execution Status": {
+      "main": [
+        [
+          {
+            "node": "Log Success Telemetry",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Failure Fallback Branch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
