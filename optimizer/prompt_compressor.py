@@ -22,7 +22,7 @@ class PromptTokenCompressor:
         """
         original_words = prompt.split()
         original_len = len(original_words)
-        if original_len < 20:
+        if original_len < 8:
             return prompt, {"compressed": False, "tokens_removed": 0, "reduction_pct": 0.0}
 
         cleaned = prompt
